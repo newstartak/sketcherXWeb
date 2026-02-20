@@ -1,0 +1,64 @@
+﻿/* ?꾩뿭 湲곕낯 ?ㅽ??? ?덉씠?꾩썐, ?됱긽 蹂?? 湲곕낯 ?고듃/諛곌꼍 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "STUNNINGOTF";
+  src: url("./assets/font/STUNNINGOTF.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 而щ윭/?덉씠?꾩썐 蹂??*/
+:root {
+  color-scheme: light;
+  --bg: #1d1d1d;
+  --surface: #fffdfa;
+  --surface-2: #f3efe6;
+  --text: #1e1a16;
+  --muted: #6b6157;
+  --border: #e2d7c7;
+  --accent: #b0121b;
+  --accent-2: #f2b705;
+  --shadow: 0 14px 30px rgba(44, 33, 22, 0.08);
+}
+
+/* ?섏씠吏 湲곕낯 諛곌꼍/??댄룷 */
+html,
+body {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "STUNNINGOTF", "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic",
+    "Nanum Gothic", "Segoe UI", system-ui, sans-serif;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+pre {
+  font-family: "JetBrains Mono", "Fira Code", "SFMono-Regular", ui-monospace, monospace;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+
+
+

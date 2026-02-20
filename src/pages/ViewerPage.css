@@ -1,0 +1,560 @@
+﻿/* 페이지 레이아웃/컨테이너 */
+.viewerPage {
+  --page-width: min(100vw, 430px);
+  --giwa-height: calc(var(--page-width) * 0.5);
+  --side-pad: clamp(48px, 12vw, 67px);
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: calc(var(--giwa-height) - 22px) var(--side-pad) 0;
+  -webkit-tap-highlight-color: transparent;
+
+  overflow-x: clip;
+  position: relative;
+}
+
+.viewerPage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(180deg, rgba(229, 1, 18, 0) 0px, rgba(229, 1, 18, 0) 114px, rgba(229, 1, 18, 0.55) 210px, #e50112 306px, #e50112 100%),
+    linear-gradient(180deg, rgba(229, 1, 18, 0) 0px, rgba(229, 1, 18, 0) 114px, rgba(229, 1, 18, 0.55) 210px, #e50112 306px, #e50112 100%);
+  background-size: clamp(16px, 6vw, 28px) 100%, clamp(16px, 6vw, 28px) 100%;
+  background-position: left top, right top;
+  background-repeat: no-repeat;
+  z-index: 4;
+}
+
+.viewerPage::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--giwa-height);
+  background-image: url("../assets/titleimg/giwa.png");
+  background-position: center top;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.viewerPage > * {
+  position: relative;
+  z-index: 3;
+}
+/* 상단 헤더(고정) */
+.viewerHeader {
+  padding: 12px 2px 10px;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: rgba(246, 242, 234, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+.viewerHeader h1 {
+  margin: 0;
+  text-align: center;
+  font-size: 30px;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+  color: #201913;
+}
+
+.viewerHeader h1::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 120px;
+  margin: 8px auto 0;
+  background: linear-gradient(90deg, transparent, var(--accent) 35%, var(--accent-2) 70%, transparent);
+  border-radius: 999px;
+}
+
+/* 탭 영역 */
+.viewerTabs {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding-bottom: 0;
+  position: relative;
+
+  overflow: hidden;
+}
+
+/* 개별 탭 버튼 */
+.viewerTab {
+  border: 0;
+  background: transparent;
+  color: #777777;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.2;
+  padding: 10px 2px 11px;
+  transition: color 180ms ease;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  text-shadow: none;
+}
+
+.viewerTab::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: #4a4a4a;
+}
+
+.viewerTab.isActive {
+  color: #ffffff;
+}
+
+.viewerTab.isActive::after {
+  height: 3px;
+  background: #e50112;
+  box-shadow: 0 2px 10px rgba(229, 1, 18, 0.55);
+}
+
+/* 본문 영역 */
+.viewerBody {
+  margin-top: 20px;
+  position: relative;
+}
+
+.viewerPanel {
+  display: none;
+  position: relative;
+  overflow: visible;
+}
+
+.viewerPanel.isShown {
+  display: block;
+}
+
+.viewerPanel > :not(.panelDecor) {
+  position: relative;
+  z-index: 3;
+}
+
+.panelDecor {
+  position: absolute;
+  inset: 4px calc(var(--side-pad) * -1) 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.decorItem {
+  position: absolute;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 1;
+}
+
+.decorGat {
+  right: -58px;
+  top: 130px;
+  width: 70%;
+  height: 310px;
+  background-image: url("../assets/backImgs/gat.png");
+  opacity: 1;
+}
+
+.decorBok {
+  left: 0;
+  top: 390px;
+  width: 54%;
+  height: 320px;
+  background-image: url("../assets/backImgs/bok.png");
+  background-position: left top;
+  background-size: 115% auto;
+  opacity: 1;
+}
+
+.decorMugu {
+  right: -72px;
+  top: 640px;
+  width: 60%;
+  height: 410px;
+  background-image: url("../assets/backImgs/mugu.png");
+  opacity: 1;
+}
+
+.panelDecorDetails .decorGat {
+  top: 190px;
+  right: -62px;
+  width: 70%;
+  height: 330px;
+  opacity: 1;
+}
+
+.panelDecorDetails .decorBok {
+  top: 480px;
+  left: 0;
+  width: 55%;
+  height: 350px;
+  background-position: left top;
+  background-size: 115% auto;
+  opacity: 1;
+}
+
+.panelDecorDetails .decorMugu {
+  top: 760px;
+  right: -84px;
+  width: 60%;
+  height: 460px;
+  opacity: 1;
+}
+
+.decorBosal {
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 120px;
+  width: 75%;
+  height: 350px;
+  background-image: url("../assets/backImgs/bosal.png");
+  opacity: 1;
+}
+
+.detailsEndArea {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.detailsEndImage {
+  width: 176px;
+  height: 232px;
+  background: url("../assets/backImgs/end.png") center / contain no-repeat;
+}
+
+/* 카드 공통 스타일 */
+.summaryCard,
+.imageCard,
+.detailItem,
+.notice,
+.emptyText {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.summaryCard,
+.imageCard,
+.emptyText {
+  padding: 0;
+}
+
+/* 총평 카드 */
+.summaryCard {
+  margin-top: 32px;
+}
+
+.summaryCard h2 {
+  font-size: clamp(23px, 6vw, 38px);
+  text-align: center;
+  font-weight: 900;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+
+.summaryCard h2,
+.imageCard h3,
+.detailItem h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.summarySubTitle {
+  margin: 34px 0 0;
+  color: #ffffff;
+  font-size: clamp(13px, 3.8vw, 22px);
+  font-weight: 800;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.summaryCard p,
+.detailItem p {
+  margin: 18px 0 0;
+  color: #d8d8d8;
+  font-size: clamp(10px, 3.4vw, 14px);
+  line-height: 1.8;
+  white-space: pre-wrap;
+  word-break: normal;
+}
+
+.summaryCard p {
+  margin-top: 36px;
+}
+
+/* 이미지 카드 */
+.imageCard {
+  margin-top: 11px;
+}
+
+.overviewItem {
+  opacity: 0;
+  transform: translateY(6px);
+  animation: overviewFadeIn 360ms ease forwards;
+  animation-delay: calc(var(--idx, 0) * 120ms);
+  padding: 10px 0;
+}
+
+.overviewItem + .overviewItem {
+  margin-top: 7px;
+}
+
+.overviewItem + .overviewItem .imageCard {
+  margin-top: 0;
+}
+
+.imageCard h3 {
+  font-size: 14px;
+}
+
+.imageActions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.imageDownload {
+  border: 0;
+  background: #f4001c;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 11px;
+  padding: 9px 20px;
+  margin-bottom: calc(9px * 2 + 11px * 1.2);
+  border-radius: 999px;
+  text-decoration: none;
+  letter-spacing: 0;
+  box-shadow: 0 10px 18px rgba(244, 0, 28, 0.34);
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease, filter 160ms ease;
+}
+
+.imageDownload:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 16px 26px rgba(244, 0, 28, 0.42);
+  filter: brightness(1.04);
+}
+
+.imageDownload.isDisabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+
+
+.viewerPage,
+.viewerBody,
+.viewerPanel,
+.overviewItem,
+.summaryCard,
+.imageCard,
+.detailList,
+.detailItem {
+  min-width: 0;
+}
+
+.summaryCard h2,
+.imageCard h3,
+.detailItem h3,
+.summaryCard p,
+.detailItem p,
+.emptyText,
+.notice,
+.noticeHint,
+.viewerTab {
+  overflow-wrap: anywhere;
+}
+/* 상세 목록 레이아웃 */
+.detailList {
+  margin-top: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.detailsTabTitle {
+  margin: 60px 0 40px;
+  color: #ffffff;
+  font-size: clamp(25px, 6.3vw, 38px);
+  font-weight: 900;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+.viewerPanel.isShown .detailsTabTitle {
+  animation: detailsTitleFadeIn 320ms ease forwards;
+  animation-delay: 40ms;
+}
+
+/* 상세 카드 */
+.detailItem {
+  padding: 18px 16px 20px;
+  opacity: 0;
+  transform: translateY(6px);
+  animation: detailFadeIn 360ms ease forwards;
+  animation-delay: calc(var(--idx, 0) * 90ms);
+}
+
+
+.detailItem h3 {
+  font-size: 24px;
+}
+
+.detailItem:first-child {
+  border-color: #d9c7ad;
+  box-shadow: 0 12px 24px rgba(58, 41, 24, 0.14);
+}
+
+.detailItem h3 {
+  position: static;
+  padding-left: 0;
+}
+
+.detailItem h3::before {
+  content: none;
+}
+
+/* 상세 카드 등장 애니메이션 */
+@keyframes detailFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 총평 탭 등장 애니메이션 */
+@keyframes overviewFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.emptyText {
+  color: #5c6470;
+  font-size: 16px;
+  text-align: center;
+}
+
+.notice {
+  margin-top: 12px;
+  padding: 14px;
+}
+
+.noticeHint {
+  margin-top: 6px;
+  font-size: 12px;
+  color: #6a7280;
+}
+
+
+@media (max-width: 640px) {
+  .viewerTabs {
+    gap: 12px;
+  }
+
+  .viewerTab {
+    font-size: 13px;
+    padding: 10px 2px 11px;
+  }
+
+  .summaryCard h2 {
+    font-size: clamp(23px, 7.2vw, 32px);
+  }
+
+  .detailItem h3 {
+    font-size: 18px;
+  }
+
+  .summaryCard p,
+  .detailItem p {
+    font-size: clamp(10px, 3.4vw, 14px);
+  }
+
+  .viewerTab.isActive {
+    transform: none;
+  }
+}
+@media (min-width: 720px) {
+  .viewerPage {
+    max-width: 430px;
+    --side-pad: 53px;
+    padding: calc(var(--giwa-height) - 22px) var(--side-pad) 0;
+  }
+
+  .summaryCard h2 { font-size: 38px; }
+
+  .summaryCard p,
+  .detailItem p {
+    font-size: 13px;
+  }
+
+  .detailItem h3 {
+    font-size: 18px;
+  }
+}
+
+@keyframes detailsTitleFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .overviewItem {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .detailItem {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .detailsTabTitle {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+
+
+
+
+
+
