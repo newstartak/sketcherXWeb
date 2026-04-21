@@ -2,8 +2,7 @@
 
 # 스케처엑스 비나이다 플래그십 스토어 관상 QR 페이지
 
-비나이다 플래그십 스토어에서 제공되는  
-관상 분석 결과 조회용 모바일 웹 QR 페이지입니다.
+**비나이다 플래그십 스토어에서 제공되는 관상 분석 결과 조회용 모바일 웹 QR 페이지**
 
 <br/>
 
@@ -12,6 +11,7 @@
 <img src="https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
 <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
 <img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black" />
+<img src="https://img.shields.io/badge/GCS-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white" />
 
 </div>
 
@@ -27,7 +27,30 @@
 
 ---
 
-## 담당 기능
+## 주요 화면
+
+<table>
+  <tr>
+    <th>종합 및 관상 그림 화면</th>
+    <th>세부 내용 화면</th>
+  </tr>
+  <tr>
+    <td align="center">
+      관상 분석 결과의 전체 종합 내용과 관상 그림을 함께 확인할 수 있는 화면
+      <br/><br/>
+      <img width="260" alt="종합 및 관상 그림 화면" src="https://github.com/user-attachments/assets/eed6bfd6-e3f4-46b8-b55b-2abc136ec098" />
+    </td>
+    <td align="center">
+      이마, 눈, 눈꼬리, 눈썹, 코, 입술, 턱, 귀, 좌우대칭 등 부위별 관상 분석 세부 내용을 확인할 수 있는 화면
+      <br/><br/>
+      <img width="130" alt="세부 내용 화면" src="https://github.com/user-attachments/assets/8d911a4f-db00-4bec-995d-ff89f22a5c25" />
+    </td>
+  </tr>
+</table>
+
+---
+
+## 담당 역할
 
 ### 결과 페이지 UI 구현
 - 모바일 환경에 최적화된 관상 결과 페이지 레이아웃 구성
@@ -70,53 +93,16 @@
 
 ---
 
-## 주요 화면
-
-<table>
-  <tr>
-    <th>종합 및 관상 그림 화면</th>
-    <th>세부 내용 화면</th>
-  </tr>
-  <tr>
-    <td>관상 분석 결과의 전체 종합 내용과 관상 그림을 함께 확인할 수 있는 화면입니다.</td>
-    <td>이마, 눈, 눈꼬리, 눈썹, 코, 입술, 턱, 귀, 좌우대칭 등 부위별 관상 분석 세부 내용을 확인할 수 있는 화면입니다.</td>
-  </tr>
-  <tr>
-    <td align="center" valign="middle">
-      <img width="260" alt="종합 및 관상 그림 화면" src="https://github.com/user-attachments/assets/eed6bfd6-e3f4-46b8-b55b-2abc136ec098" />
-    </td>
-    <td align="center" valign="middle">
-      <img width="260" alt="세부 내용 화면" src="https://github.com/user-attachments/assets/8d911a4f-db00-4bec-995d-ff89f22a5c25" />
-    </td>
-  </tr>
-</table>
-
----
-
-## 화면 구성
-
-| 화면 | 설명 |
-|---|---|
-| 종합 및 관상 그림 | 전체 관상 분석 결과와 이미지 제공 |
-| 세부 내용 | 얼굴 부위별 관상 해설 제공 |
-
----
-
 ## 구현 포인트
 
-- 모바일 세로형 화면에 최적화된 UI 구성
-- 탭 전환 방식으로 정보 구조를 직관적으로 분리
-- 긴 텍스트 콘텐츠도 가독성 있게 확인할 수 있도록 레이아웃 설계
-- 브랜드 아이덴티티에 맞는 비주얼 스타일 적용
-- Google Cloud Storage 기반으로 결과 데이터 연동 및 출력 처리
+### 모바일 결과 페이지 중심 UI 설계
+- 모바일 세로형 화면에 최적화된 레이아웃으로 구성하여 QR 진입 이후 즉시 결과를 확인할 수 있도록 설계하였습니다.
+- 한 손 조작 환경에서도 자연스럽게 탐색할 수 있도록 정보 배치와 버튼 구성을 단순하게 정리하였습니다.
 
----
+### 탭 기반 정보 구조 분리
+- 종합 결과와 세부 해설을 하나의 화면에 모두 나열하는 대신 탭 전환 방식으로 분리하여 정보 구조를 직관적으로 구성하였습니다.
+- 이를 통해 긴 텍스트 중심의 결과도 사용자가 부담 없이 단계적으로 확인할 수 있도록 하였습니다.
 
-## 프로젝트 의의
-
-스토어 현장에서 QR을 통해 즉시 접속 가능한 결과 페이지를 제공함으로써  
-오프라인 체험과 디지털 콘텐츠를 자연스럽게 연결하였습니다.
-
-또한 단순 결과 노출을 넘어서  
-브랜드 무드와 몰입감을 유지하는 형태의 결과 화면을 구성하여  
-사용자 경험을 강화한 프로젝트입니다.
+### 결과 데이터와 화면 출력 연결
+- Google Cloud Storage 기반으로 결과 데이터와 분석 이미지를 불러와 화면에 연결하였습니다.
+- QR 페이지 접근 시 해당 사용자 결과가 안정적으로 표시되도록 데이터 조회 흐름을 구성하였습니다.
