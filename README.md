@@ -72,17 +72,11 @@
 
 ## 주요 화면
 
-### 종합 및 관상 그림 화면
-관상 분석 결과의 전체 종합 내용과 관상 그림을 함께 확인할 수 있는 화면입니다.
+| 종합 및 관상 그림 화면 | 세부 내용 화면 |
+|---|---|
+| <img width="320" alt="종합 및 관상 그림 화면" src="https://github.com/user-attachments/assets/eed6bfd6-e3f4-46b8-b55b-2abc136ec098" /> | <img width="320" alt="세부 내용 화면" src="https://github.com/user-attachments/assets/8d911a4f-db00-4bec-995d-ff89f22a5c25" /> |
+| 관상 분석 결과의 전체 종합 내용과 관상 그림을 함께 확인할 수 있는 화면입니다. | 이마, 눈, 눈꼬리, 눈썹, 코, 입술, 턱, 귀, 좌우대칭 등 부위별 관상 분석 세부 내용을 확인할 수 있는 화면입니다. |
 
-<img width="320" alt="종합 및 관상 그림 화면" src="https://github.com/user-attachments/assets/8d911a4f-db00-4bec-995d-ff89f22a5c25" />
-
-<br/>
-
-### 세부 내용 화면
-이마, 눈, 눈꼬리, 눈썹, 코, 입술, 턱, 귀, 좌우대칭 등 부위별 관상 분석 세부 내용을 확인할 수 있는 화면입니다.
-
-<img width="320" alt="세부 내용 화면" src="https://github.com/user-attachments/assets/eed6bfd6-e3f4-46b8-b55b-2abc136ec098" />
 
 ---
 
